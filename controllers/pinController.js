@@ -15,7 +15,7 @@ exports.crearPin = async (req, res) => {
     console.log(req.body);
 }
 
-exports.obtenerPinId = async (req, res) => {
+exports.obtenerPin = async (req, res) => {
     try {
         const pin = await Pin.find();
         res.json(pin);
@@ -51,7 +51,7 @@ exports.actualizarPin = async (req, res) => {
     }
 }
 
-exports.obtenerPin = async (req, res) => {
+exports.obtenerPinId = async (req, res) => {
     try {
         let pin = await Pin.findById(req.params.id);
         if (!pin) {

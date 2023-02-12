@@ -2,6 +2,7 @@ const express = require('express');
 const conexionDB = require('./config/db');
 const cors = require('cors');
 
+
 const app = express();
 
 conexionDB();
@@ -14,4 +15,7 @@ app.use('/api', require('./routes/pin'));
 
 app.listen(5005, () =>{
     console.log("Servidor corriendo en 5005");
+})
+app.get('/', (req, res) =>{
+    res.send("Servidor funcionando");
 })
