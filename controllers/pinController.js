@@ -28,7 +28,7 @@ exports.obtenerPin = async (req, res) => {
 exports.actualizarPin = async (req, res) => {
     try {
         const { nombreGrupo, telefono, imagen, latitud, longitud, descripcion, horario, dia, costo, tipo} = req.body;
-        let pin = await pin.findById(req.params.id);
+        let pin = await Pin.findById(req.params.id);
         if (!pin) {
             res.status(404).json({ msg: 'No existe el pin' })
         }
